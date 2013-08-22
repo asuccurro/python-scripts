@@ -53,13 +53,14 @@ def main():
 
 	files = {}
 	htmlindex = open('%s_%s_index.html'%(opts.mode, opts.inputdir), 'wa')
-	htmlindex.write('<h1> Go to: </h1>\n <ul>\n')
+	htmlindex.write('<h2> Go to: </h2>\n <ul>\n')
 	for l in lep:
+		htmlindex.write('<li>%s</li>\n <ul>'%l)
 		if opts.mode == 'CHANNEL':
 			for c in channels:
 				mydir = getDir(opts.inputdir, l, c)
 				fn = l+c
-				htmlindex.write('<li><a href=\"%s\">%s</a></li>\n'%(fn+'.html', fn))
+				htmlindex.write('<li><a href=\"%s\">%s</a></li>\n'%(fn+'.html', c.replace('_',' ')))
 				files[fn] = open(fn+'.html', 'wa')
 				files[fn].write("<h1>%s</h1> \n <p> \n" % (fn+" lin scale"))
 				files[fn].write("<h2> <a href=%s> go to log scale </a> </h2> \n <p> \n" % (fn+'_log.html'))
@@ -138,9 +139,10 @@ def main():
 				files[fn+'_log'].write("\n </tr> </table> \n")
 				files[fn].close()
 				files[fn+'_log'].close()
-				htmlindex.write('<li><a href=\"%s\">%s</a></li>\n'%(fn+'.html', fn))
-		htmlindex.write('</ul> \n')
-		htmlindex.close()
+				htmlindex.write('<li><a href=\"%s\">%s</a></li>\n'%(fn+'.html', v))
+			htmlindex.write('</ul> \n')
+	htmlindex.write('</ul> \n')
+	htmlindex.close()
 
 #==================== ^_^ ====================#
 if __name__=="__main__":
