@@ -1,6 +1,6 @@
 #! /bin/env python
 #==================== ^_^ ====================#
-# succurro@ifae.es
+# succurro ATifae.es
 # use yield dictionaries from compareyields
 # to fill latex tables
 #==================== ^_^ ====================#

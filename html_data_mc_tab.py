@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 ###############################
-# a.succurro@gmail.com # 2011 #
+# a.succurro ATgmail.com # 2011 #
 ###############################
 
 # python script to produce .html files

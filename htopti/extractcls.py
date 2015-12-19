@@ -1,6 +1,6 @@
 #! /bin/env python
 #==================== ^_^ ====================#
-# succurro@ifae.es
+# succurro ATifae.es
 # fill py files with yield dictionaries
 #==================== ^_^ ====================#
 import os, sys
